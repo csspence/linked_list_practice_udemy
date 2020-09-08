@@ -28,4 +28,20 @@ class SinglyLinkedList {
       this.length++;
     }
   }
+
+  pop = () => {
+    if(this.length === 0) {
+      return undefined;
+    }
+    let current = this.head;
+    let temp = current.next;
+    while(temp.next !== null) {
+      current = current.next;
+      temp = current.next;
+    }
+    current.next = null;
+    this.tail = current;
+    this.length--;
+    return temp;
+  }
 }
