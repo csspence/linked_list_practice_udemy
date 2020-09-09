@@ -44,4 +44,9 @@ class SinglyLinkedList {
     this.length--;
     return temp;
   }
+
+  shift = () => {
+    this.head = this.head.next;
+    this.length--;
+  }
 }
