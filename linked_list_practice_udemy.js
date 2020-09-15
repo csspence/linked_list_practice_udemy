@@ -104,4 +104,20 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  remove = (index) => {
+    if(index < 0 || index > this.length) {
+      return undefined;
+    } else if(index === this.length - 1) {
+      this.pop();
+    } else if (index === 0) {
+      this.shift();
+    } else {
+      let prior = this.get(index - 1);
+      let temp = prior.next;
+      prior.next = temp.next;
+      this.length--;
+      return temp.val;
+    }
+  }
 }
